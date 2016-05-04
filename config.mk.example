@@ -1,0 +1,5 @@
+DATA_DIR=data
+RESULTS_DIR=results
+ADAPTERS_DIR=data/adapters
+
+NPROC=20
