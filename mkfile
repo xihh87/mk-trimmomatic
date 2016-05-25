@@ -14,8 +14,5 @@ results/cutadapt/%_R1_001.fastq.gz: data/%_R1_001.fastq.gz data/%_R2_001.fastq.g
 		$CUTADAPT_ADAPTERS \
 		$prereq
 
-clean:VE:
+clean-cutadapt:VE:
 	rm -r results/cutadapt
-
-%/:
-	mkdir -p $stem
