@@ -20,7 +20,10 @@ results/trimmomatic/unpaired/%_R2_001.fastq.gz	\
 		"results/trimmomatic/paired/"$stem"_R2_001.fastq.gz"	\
 		"results/trimmomatic/unpaired/"$stem"_R2_001.fastq.gz"	\
 		$TRIMMOMATIC_OPTARGS \
-		ILLUMINACLIP:$TRIMMOMATIC_ADAPTERS:2:30:10
+		ILLUMINACLIP:$TRIMMOMATIC_ADAPTERS:2:30:10 \
+		LEADING:3 \
+		TRAILING:3 \
+		AVGQUAL:18
 
 clean-trimmomatic:VE:
 	rm -r results/trimmomatic
