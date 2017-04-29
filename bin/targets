@@ -1,0 +1,4 @@
+find -L data/ \
+	-name '*_R1_001.fastq.gz' \
+| sed -r \
+	-e 's#^data/#results/#g'
