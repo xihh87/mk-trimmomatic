@@ -1,9 +1,10 @@
-This is a module for a bioinformatic pipeline using mk
+Use trimmomatic to clean reads from high troughput sequencing.
 
 # Requirements
 
-- mk (usually on 9base or plan9port package)
-- [cutadapt](http://code.google.com/p/cutadapt/ )
+- [`mk`](http://doc.cat-v.org/bell_labs/mk/mk.pdf "A successor for `make`.")
+
+- [trimmomatic](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4103590/ "Trimmomatic: a flexible trimmer for Illumina sequence data")
 
 # How to use
 
@@ -20,15 +21,16 @@ $ find adapters -name '*.fastq'
 ```
 
 You can optionally set an alternate directory for your adapters (by default `adapters/`):
-and extra parameters for the execution of cutadapt (none by default)
-by modifying `cutadapt.mk`.
+and extra parameters for the execution of trimmomatic (none by default)
+by modifying `config.mk`.
 
-Then run the following command:
+Then run one of the following commands:
 
 ```
-$ mk
+$ bin/targets-paired | xargs mk
+$ bin/targets-single | xargs mk
 ```
 
 There! mk should do everything needed to take out your adapters.
 
-Your adapter-cropped files will be on `results/cutadapt` when the process ends.
+Your adapter-cropped files will be on `results/` when the process ends.
