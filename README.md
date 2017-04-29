@@ -2,7 +2,8 @@ Use trimmomatic to clean reads from high troughput sequencing.
 
 # Requirements
 
-- mk (usually on 9base or plan9port package)
+- [`mk`](http://doc.cat-v.org/bell_labs/mk/mk.pdf "A successor for `make`.")
+
 - [trimmomatic](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4103590/ "Trimmomatic: a flexible trimmer for Illumina sequence data")
 
 # How to use
@@ -23,10 +24,11 @@ You can optionally set an alternate directory for your adapters (by default `ada
 and extra parameters for the execution of trimmomatic (none by default)
 by modifying `config.mk`.
 
-Then run the following command:
+Then run one of the following commands:
 
 ```
-$ bin/targets | xargs mk
+$ bin/targets-paired | xargs mk
+$ bin/targets-single | xargs mk
 ```
 
 There! mk should do everything needed to take out your adapters.
